@@ -719,3 +719,119 @@ snippet filter
 	filter:${1:filter};
 snippet zoom
 	zoom:${1:normal|number};
+
+
+# css3 features
+# {{{
+snippet ani
+	-webkit-animation: ${1:aniname} ${2:0.5}s;
+	-moz-animation: $1 $2s;
+	-o-animation: $1 $2s;
+	-ms-animation: $1 $2s;
+	animation: $1 $2s;${3}
+snippet radius
+	border-radius:${1:5}px;${2}
+# Inline comment
+snippet cmt
+	/* ${1:Comment} */${2}
+# block comment
+snippet cmtb
+	/*
+		${1:Comment}
+	*/
+# box-sizing
+snippet box-sizing
+	-webkit-box-sizing: ${1:border-box};
+	-moz-box-sizing:    $1;
+	box-sizing:         $1;
+# box-shadow
+snippet box-shadow
+	-moz-box-shadow:    ${1:0} ${2:0} ${3:0} ${4:0} ${5:#000};
+	-ms-box-shadow:     $1 $2 $3 $4 $5;
+	-o-box-shadow:      $1 $2 $3 $4 $5;
+	-webkit-box-shadow: $1 $2 $3 $4 $5;
+	box-shadow:         $1 $2 $3 $4 $5;${6}
+# box-shadow with inset/outset
+snippet box-shadowi
+	-moz-box-shadow:    ${1:inset} ${2:0} ${3:0} ${4:0} ${5:0} ${6:#000};
+	-ms-box-shadow:     $1 $2 $3 $4 $5 $6;
+	-o-box-shadow:      $1 $2 $3 $4 $5 $6;
+	-webkit-box-shadow: $1 $2 $3 $4 $5 $6;
+	box-shadow:         $1 $2 $3 $4 $5 $6;${7}
+# transition
+snippet transition
+	-moz-transition:    ${1:color} ${2:.5s} ${3:linear};
+	-ms-transition:     $1 $2 $3;
+	-o-transition:      $1 $2 $3;
+	-webkit-transition: $1 $2 $3;
+	transition:         $1 $2 $3;${4}
+# transform
+snippet transform
+	-moz-transform:    ${1:rotate}(${2:45deg});
+	-ms-transform:     $1($2);
+	-o-transform:      $1($2);
+	-webkit-transform: $1($2);
+	transform:         $1($2);${3}
+# Multiple transform
+snippet transformm
+	-moz-transform:    ${1:rotate(45deg)});
+	-ms-transform:     $1;
+	-o-transform:      $1;
+	-webkit-transform: $1;
+	transform:         $1;${2}
+# transform: rotate
+snippet trotate
+	-moz-transform:    rotate(${1:45}deg);
+	-ms-transform:     rotate($1deg);
+	-o-transform:      rotate($1deg);
+	-webkit-transform: rotate($1deg);
+	transform:         rotate($1deg);${2}
+# transform: translate
+snippet ttransform
+	-moz-transform:    translate(${1:0px}, ${2:0px});
+	-ms-transform:     translate($1, $2);
+	-o-transform:      translate($1, $2);
+	-webkit-transform: translate($1, $2);
+	transform:         translate($1, $2);${3}
+# transform: scale
+snippet tscale
+	-moz-transform:    scale(${1:0});
+	-ms-transform:     scale($1);
+	-o-transform:      scale($1);
+	-webkit-transform: scale($1);
+	transform:         scale($1);${2}
+# transform: skew
+snippet tskew
+	-moz-transform:    scale(${1:45}deg);
+	-ms-transform:     scale($1deg);
+	-o-transform:      scale($1deg);
+	-webkit-transform: scale($1deg);
+	transform:         scale($1deg);${2}
+# @media
+snippet media
+	@media ${1:all} {
+		${2:/* Statements */}
+	}
+# @media with a feature
+snippet mediaf
+	@media ${1:all} ${2:and} (${3:max-width: 960px}) {
+		${4:/* Statements */}
+	}
+# linear gradient
+snippet linear-gradient
+	background: $2;
+	background:    -moz-linear-gradient(${1:top}, ${2:#111} ${3:0%}, ${4:#eee} ${5:100%});
+	background:     -ms-linear-gradient($1, $2 $3, $4 $5);
+	background:      -o-linear-gradient($1, $2 $3, $4 $5);
+	background: -webkit-linear-gradient($1, $2 $3, $4 $5);
+	background:         linear-gradient($1, $2 $3, $4 $5);${6}
+# radial-gradient
+snippet radial-gradient
+	background: $1;
+	background:   -moz-radial-gradient(center, ellipse cover, ${1:#111} ${2:0%}, ${3:#eee} ${4:100%});
+	background:     -ms-radial-gradient(center, ellipse cover, $1 $2, $3 $4);
+	background:      -o-radial-gradient(center, ellipse cover, $1 $2, $3 $4);
+	background: -webkit-gradient(radial, center center, 0px, center center, $4, color-stop($2, $1), color-stop($4, $3));
+	background: -webkit-radial-gradient(center, ellipse cover, $1 $2, $3 $4);
+	background:             radial-gradient(ellipse at center, $1 $2, $3 $4);${5}
+# }}}
