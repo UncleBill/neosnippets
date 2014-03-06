@@ -97,3 +97,15 @@ abbr        #include<iostream> int main...
 snippet     p
 options     head
   std::cout << ${0:TARGET} << std::endl;
+
+snippet     list
+abbr        list<T>
+options     head
+	std::list<${1:T}> ${2};${3}
+
+snippet     typedef_struct
+abbr        typedef struct
+options     head
+    typedef struct ${1:struct_type} {
+        ${2}
+    } $1;${3}
