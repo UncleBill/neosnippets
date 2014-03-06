@@ -70,3 +70,19 @@ options     head
   constructor: (${4:#:args}) ->
             ${5:TARGET}
 
+snippet     cl
+abbr        console.log
+options     head
+    console.log ${1}
+
+snippet     tester
+abbr        test warpper
+options     head
+    console.time(${1})
+    ${2}
+    console.timeEnd($1)
+
+snippet     =
+abbr        var = value
+options     head
+    ${1} = ${2}
