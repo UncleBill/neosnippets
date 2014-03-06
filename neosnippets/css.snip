@@ -7,35 +7,57 @@ alias	ba
     background-attachment:${1};${2}
 
 snippet	backcolor
-alias	bc
-    background-color:${1};${2}
+alias	bgc
+    background-color:${1:#0000ff};${2}
 
 snippet	backimage
-alias	bi
-    background-image:${1};${2}
+abbr    jpg type
+alias	bgi
+    background-image:url(${1}.jpg)
+
+snippet bgpng
+abbr    png type
+	background-image: url(../images/${1}.png});
+	_background-image: url(../images/$1.gif});${2}
 
 snippet	backposition
 alias	bp
     background-position:${1};${2}
 
 snippet	backrepeat
-alias	br
-    background-repeat:${1};${2}
+alias	bgr
+    background-repeat:${1:no-repeat};${2}
 
 snippet	border
-alias	b
-    border:${1};${2}
+alias	bd
+	border: ${1:1}px ${2:solid} ${3:blue};${4}
+
+snippet border-top
+alias   bdt
+	border-top: ${1:1}px ${2:solid} ${3:blue};${4}
+
+snippet border-left
+alias   bdl
+	border-left: ${1:1}px ${2:solid} ${3:blue};${4}
+
+snippet border-right
+alias   bdr
+	border-right: ${1:1}px ${2:solid} ${3:blue};${4}
+
+snippet border-bottom
+alias bdb
+	border-bottom: ${1:1}px ${2:solid} ${3:blue};${4}
 
 snippet	border-style
-alias	bs
+alias	bds
     border-style:${1};${2}
 
 snippet	border-color
-alias	bc
+alias	bdc
     border-color:${1};${2}
 
 snippet	border-width
-alias	bw
+alias	bdw
     border-width:${1};${2}
 
 snippet	border-bottom-width
@@ -166,43 +188,43 @@ alias	fw
     font-weight:${1};${2}
 
 snippet	margin
-alias	m
+alias	mg
     margin:${1};${2}
 
 snippet	margin-bottom
-alias	mb
+alias	mgb
     margin-bottom:${1};${2}
 
 snippet	margin-top
-alias	mt
+alias	mgt
     margin-top:${1};${2}
 
 snippet	margin-left
-alias	ml
+alias	mgl
     margin-left:${1};${2}
 
 snippet	margin-right
-alias	mr
+alias	mgr
     margin-right:${1};${2}
 
 snippet	padding
-alias	p
+alias	pd
     padding:${1};${2}
 
 snippet	padding-bottom
-alias	pb
+alias	pdb
     padding-bottom:${1};${2}
 
 snippet	padding-top
-alias	pt
+alias	pdt
     padding-top:${1};${2}
 
 snippet	padding-left
-alias	pl
+alias	pdl
     padding-left:${1};${2}
 
 snippet	padding-right
-alias	pr
+alias	pdr
     padding-right:${1};${2}
 
 snippet	list-style
@@ -289,12 +311,16 @@ snippet linear
 snippet font
 	font:${1:font-style} ${2:font-variant} ${3:font-weight} ${4:font-size} ${5:line-height} ${6:font-family};
 snippet font-family
+alias   ff
 	font-family:${1:Courier,"Courier New"};
 snippet font-size
+alias   fs
 	font-size:${1:xx-small|x-small|small|medium|large|x-large|xx-large|larger|smaller|length};
 snippet font-style
+alias   fst
 	font-style:${1:normal|italic|oblique};
 snippet font-weight
+alias   fw
 	font-weight:${1:normal|bold|bolder|lighter};
 snippet text-decoration
 	text-decoration:${1:none|underline|blink|overline|line-through};
@@ -305,7 +331,11 @@ snippet font-variant
 snippet text-transform
 	text-transform:${1:none|capitalize|uppercase|lowercase};
 snippet line-height
+alias   lh
 	line-height:${1:normal|length};
+snippet textmid
+	height: ${1:20}px;
+	line-height: $1px;${2}
 snippet letter-spacing
 	leeter-spacing:${1:normal|length};
 snippet word-spacing
@@ -386,15 +416,16 @@ snippet layer-background-image
 	layer-background-image:${1:none};
 # Position
 snippet position
-	position:${1:static|absolute|fixed|relative};
+alias   pos
+	position:${1:absolute};
+snippet posr
+	position: relative;
 snippet z-index
 	z-index:${1:auto};
 snippet top
 	top:${1:auto};
 snippet right
 	right:${1:auto};
-snippet bottom
-	bottom:${1:auto};
 snippet left
 	left:${1:auto};
 # Dimensions
@@ -415,6 +446,54 @@ snippet clear
 	clear:${1:none|left|right|both};
 snippet float
 	float:${1:none|left|right};
+
+snippet     fl
+abbr        float left
+options     head
+	float: left;${1}
+
+snippet     fr
+abbr        float right
+options     head
+	float: right;${1}
+
+snippet     ..
+abbr       dot class
+options     head
+	.${1}{
+		${2}
+	}
+
+snippet     ##
+abbr        hash id
+options     head
+	#${1}{
+		${2}
+	}
+
+snippet     l
+alias       left
+abbr        left
+options     head
+	left: ${1}px;${2}
+
+snippet     r
+alias       right
+abbr        right
+options     head
+	right: ${1}px;${2}
+
+snippet     t
+alias       bottom
+abbr        top
+options     head
+	top: ${1}px;${2}
+
+snippet     b
+alias       bottom
+abbr        bottom
+options     head
+	bottom: ${1}px;${2}
 snippet clip
 	clip:${1:auto|rect(number number number number)};
 snippet overflow
@@ -425,6 +504,35 @@ snippet overflow-y
 	overflow-y:${1:visible|auto|hidden|scroll};
 snippet display
 	display:${1:block|none|inline|compact|marker|inline-table|list-item|run-in|table|table-caption|table-cell|table-column|table-column-group|table-footer-group|table-header-group|table-row|table-row-group};
+snippet     dn
+abbr        display noe
+options     head
+	display: none;${1}
+
+snippet     db
+abbr        display block
+options     head
+	display: block;${1}
+
+snippet     di
+abbr        display inline
+options     head
+	display: inline;${1}
+
+snippet     dib
+abbr        display inline-block
+options     head
+	display: inline-block;${1}
+
+snippet     hide
+abbr        overflow hidden
+options     head
+	overflow: hidden;
+
+snippet     auto
+abbr        overflow auto
+options     head
+	overflow: auto;
 snippet visiblity
 	visiblity:${1:inherit|visible|collapse|hidden};
 # Margins
