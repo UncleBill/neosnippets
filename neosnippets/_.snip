@@ -39,3 +39,33 @@ alias       fnamelc
 options     word
     `substitute(bufname('%') =='[Command Line]' ? expand('#:t:r:r:r') : expand('%:t:r:r:r'), '\%(_\(.\)\)', '\u\1', 'g')`${0}
 
+snippet break
+abbr    #gap
+options head
+	+--${1:gap}----------------------------------------------------+
+	+----------------------------------------------------$1${2}--+
+snippet 80-
+options head
+    --------------------------------------------------------------------------------
+
+snippet 80=
+    ================================================================================
+
+snippet 80*
+options head
+    ********************************************************************************
+
+snippet     gap
+abbr        line gap
+options     head
+    =============================================================================
+    ${1}
+    =============================================================================
+
+snippet     lorem
+abbr        Lorem Ipsum - 50 Words"
+options     head
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+    vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+    no sea takimata sanctus est Lorem ipsum dolor sit amet.
