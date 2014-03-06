@@ -1,6 +1,6 @@
 snippet	background
 alias	bg
-    background:${1};${2}
+	background:${1:transparent} ${2:none} ${3:no-repeat} ${4:scroll};${5}
 
 snippet	backattachment
 alias	ba
@@ -28,14 +28,6 @@ snippet	backrepeat
 alias	bgr
     background-repeat:${1:no-repeat};${2}
 
-snippet	border
-alias	bd
-	border: ${1:1}px ${2:solid} ${3:blue};${4}
-
-snippet border-top
-alias   bdt
-	border-top: ${1:1}px ${2:solid} ${3:blue};${4}
-
 snippet border-left
 alias   bdl
 	border-left: ${1:1}px ${2:solid} ${3:blue};${4}
@@ -50,51 +42,47 @@ alias bdb
 
 snippet	border-style
 alias	bds
-    border-style:${1};${2}
-
-snippet	border-color
-alias	bdc
-    border-color:${1};${2}
+	border-style:${1:none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset};${2}
 
 snippet	border-width
 alias	bdw
-    border-width:${1};${2}
+	border-width:${1:medium|thin|thick|length};${2}
 
 snippet	border-bottom-width
 alias	bbw
-    border-bottom-width:${1};${2}
+	border-bottom-width:${1:medium|thin|thick|length};${2}
 
 snippet	border-top-width
 alias	btw
-    border-top-width:${1};${2}
+	border-top-width:${1:medium|thin|thick|length};${2}
 
 snippet	border-left-width
 alias	blw
-    border-left-width:${1};${2}
+	border-left-width:${1:medium|thin|thick|length};${2}
 snippet	border-right-width
 alias	brw
-    border-right-width:${1};${2}
+	border-right-width:${1:medium|thin|thick};${2}
 
 
 snippet	border-bottom-style
 alias	bbs
-    border-bottom-style:${1};${2}
+	border-bottom-style:${1:none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset};${2}
 
 snippet	border-top-style
 alias	bts
-    border-top-style:${1};${2}
+	border-top-style:${1:none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset};${2}
 
 snippet	border-left-style
 alias	bls
-    border-left-style:${1};${2}
+	border-left-style:${1:none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset};${2}
 snippet	border-right-style
 alias	brs
-    border-right-style:${1};${2}
+	border-right-style:${1:none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset};${2}
 
 
 snippet	border-bottom-color
 alias	bbc
-    border-bottom-color:${1};${2}
+    border-bottom-color:${1:#0000ff};${2}
 
 snippet	border-top-color
 alias	btc
@@ -102,10 +90,10 @@ alias	btc
 
 snippet	border-left-color
 alias	blc
-    border-left-color:${1};${2}
+    border-left-color:${1:#0000ff};${2}
 snippet	border-right-color
 alias	brc
-    border-right-color:${1};${2}
+    border-right-color:${1:#0000ff};${2}
 
 snippet	outline
 alias	ol
@@ -127,65 +115,15 @@ snippet	color
 alias	c
     color:${1};${2}
 
-snippet	direction
-alias	d
-    direction:${1};${2}
-
-snippet	letter-spacing
-alias	ls
-    letter-spacing:${1};${2}
-
-snippet	line-height
-alias	lh
-    line-height:${1};${2}
-
-snippet	text-align
-alias	ta
-    text-align:${1};${2}
-
-snippet	text-decoration
-alias	td
-    text-decoration:${1};${2}
-
-snippet	text-indent
-alias	ti
-    text-indent:${1};${2}
-
-snippet	text-transform
-alias	tt
-    text-transform:${1};${2}
-
-snippet	unicode-bidi
-alias	ub
-    unicode-bidi:${1};${2}
-
-snippet	white-space
-alias	ws
-    white-space:${1};${2}
-
-snippet	word-spacing
-alias	ws
-    word-spacing:${1};${2}
-
 snippet	font
 alias	f
     font:${1};${2}
 
-snippet	font-family
-alias	ff
-    font-family:${1:"Times New Roman",Georgia,Serif};${2}
 
 snippet	font-size
 alias	fs
     font-size:${1};${2}
 
-snippet	font-style
-alias	fs
-    font-style:${1};${2}
-
-snippet	font-weight
-alias	fw
-    font-weight:${1};${2}
 
 snippet	margin
 alias	mg
@@ -229,27 +167,30 @@ alias	pdr
 
 snippet	list-style
 alias	ls
-    list-style:${1};${2}
+	list-style:${1:none};${2}
+
+snippet list-style2
+	list-style:${1:disc} ${2:outside} ${3:none};${4}
 
 snippet	list-style-image
 alias	lsi
-    list-style-image:${1};${2}
+	list-style-image:url(${1:});${2}
 
 snippet	list-style-position
 alias	lsp
-    list-style-position:${1};${2}
+	list-style-position:${1:outside|inside};${2}
 
 snippet	list-style-type
 alias	lst
-    list-style-type:${1};${2}
+	list-style-type:${1:disc|circle|square|decimal|lower-roman|upper-roman|lower-alpha|upper-alpha|none|armenian|cjk-ideographic|georgian|lower-greek|hebrew|hiragana|hiragana-iroha|katakana|katakana-iroha|lower-latin|upper-latin};${2}
 
 snippet	content
 alias	c
-    content:${1};${2}
+	content:${1:attr(alt)|counter(name)|counter(name,list-style-type)|counters(name,string)|counters(name,string,list-style-type)|no-close-quote|no-open-quote|close-quote|open-quote|string|url(url)};${2}
 
 snippet	height
 alias	h
-    height:${1};${2}
+    height:${1:auto};${2}
 
 snippet	max-height
 alias	mah
@@ -308,41 +249,41 @@ snippet linear
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$6', endColorstr='$8', GradientType=${11:0|1});
 #
 #Font
-snippet font
-	font:${1:font-style} ${2:font-variant} ${3:font-weight} ${4:font-size} ${5:line-height} ${6:font-family};
 snippet font-family
 alias   ff
 	font-family:${1:Courier,"Courier New"};
-snippet font-size
-alias   fs
-	font-size:${1:xx-small|x-small|small|medium|large|x-large|xx-large|larger|smaller|length};
 snippet font-style
 alias   fst
 	font-style:${1:normal|italic|oblique};
 snippet font-weight
 alias   fw
-	font-weight:${1:normal|bold|bolder|lighter};
+	font-weight:${1:normal|bold|bolder|lighter};${2}
 snippet text-decoration
-	text-decoration:${1:none|underline|blink|overline|line-through};
+alias   td
+	text-decoration:${1:none|underline|blink|overline|line-through};${2}
 snippet text-underline-position
 	text-underline-position:${1:below|above};
 snippet font-variant
 	font-variant:${1:normal|small-caps};
 snippet text-transform
-	text-transform:${1:none|capitalize|uppercase|lowercase};
+alias	tt
+	text-transform:${1:none|capitalize|uppercase|lowercase};${2}
 snippet line-height
 alias   lh
-	line-height:${1:normal|length};
+	line-height:${1:normal|length};${2}
 snippet textmid
 	height: ${1:20}px;
 	line-height: $1px;${2}
 snippet letter-spacing
+alias   ls
 	leeter-spacing:${1:normal|length};
 snippet word-spacing
+alias   ws
 	word-spacing:${1:normal|length};
 # Text
 snippet text-indent
-	text-indent:${1:length};
+alias	ti
+	text-indent:${1:length};${2}
 snippet text-overflow
 	text-overflow:${1:clip|ellipsis};
 snippet vertical-align
@@ -350,6 +291,7 @@ snippet vertical-align
 snippet valign
 	vertical-align:${1:auto|baseline|sub|super|top|text-top|middle|bottom|text-bottom|length};
 snippet text-align
+alias	ta
 	text-align:${1:left|right|center|justify};
 snippet layout-flow
 	layout-flow:${1:horizontal|vertical-ideographic};
@@ -358,12 +300,14 @@ snippet writing-mode
 snippet direction
 	direction:${1:ltr|rtl|inherit};
 snippet unicode-bidi
+alias	ub
 	unicode-bidi:${1:normal|bidi-override|embed};
 snippet word-break
 	wrod-break:${1:normal|break-all|keep-all};
 snippet line-break
 	line-break:${1:normal|strict};
 snippet white-space
+alias	ws
 	white-space:${1:normal|pre|nowrap};
 snippet word-wrap
 	word-wrap:${1:normal|break-word};
@@ -392,8 +336,6 @@ snippet layout-grid-mode
 snippet layout-grid-fixed
 	layout-grid-fixed:${1:loose|strict|fixed};
 # Background
-snippet background
-	background:${1:transparent} ${2:none} ${3:no-repeat} ${4:scroll};${5}
 snippet background-att
 	background-attachment:${1:scroll|fixed};
 snippet background-color
@@ -428,19 +370,6 @@ snippet right
 	right:${1:auto};
 snippet left
 	left:${1:auto};
-# Dimensions
-snippet height
-	height:${1:auto};
-snippet max-height
-	max-height:${1:none};
-snippet min-height
-	min-height:${1:none};
-snippet width
-	width:${1:auto};
-snippet max-width
-	max-width:${1:auto};
-snippet min-width
-	min-width:${1:auto};
 # Layout
 snippet clear
 	clear:${1:none|left|right|both};
@@ -535,100 +464,28 @@ options     head
 	overflow: auto;
 snippet visiblity
 	visiblity:${1:inherit|visible|collapse|hidden};
-# Margins
-snippet margin
-	margin:${1:auto};
-snippet margin-top
-	margin-top:${1:auto};
-snippet margin-right
-	margin-right:${1:auto};
-snippet margin-bottom
-	margin-bottom:${1:auto};
-snippet margin-left
-	margin-left:${1:auto};
 # Outlines
-snippet outline
-	outline:${1:outline-color} ${2:outline-style} ${3:outline-width};${4}
-snippet outline-color
-	outline-color:${1:invert};
-snippet outline-style
-	outline-style:${1:none|dotted|dashed|solid|double|groove|ridge|inset|outset};
-snippet outline-width
-	outline-width:${1:medium|thin|thick|length};
 # Border
 snippet border
+alias	bd
 	border:${1:1px} ${2:solid} ${3:#ccc};${4}
 snippet border-color
-	border-color:${1:#ccc};
-snippet border-style
-	border-style:${1:none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset};
-snippet border-width
-	border-width:${1:medium|thin|thick|length};
+alias	bdc
+	border-color:${1:#ccc};${2}
 snippet border-top
+alias   bdt
 	border-top:${1:1px} ${2:solid} ${3:#ccc};${4}
-snippet border-top-color
-	border-top-color:${1:#ccc};
-snippet border-top-style
-	border-top-style:${1:none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset};
-snippet border-top-width
-	border-top-width:${1:medium|thin|thick|length};
-snippet border-right
-	border-right:${1:1px} ${2:solid} ${3:#ccc};${4}
-snippet border-right-color
-	border-right-color:${1:#ccc};
-snippet border-right-style
-	border-right-style:${1:none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset};
-snippet border-right-width
-	border-right-width:${1:medium|thin|thick};
-snippet border-bottom
-	border-bottom:${1:1px} ${2:solid} ${3:#ccc};
-snippet border-bottom-color
-	border-bottom-color:${1:#ccc};
-snippet border-bottom-style
-	border-bottom-style:${1:none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset};
-snippet border-bottom-width
-	border-bottom-width:${1:medium|thin|thick|length};
-snippet border-left
-	border-left:${1:1px} ${2:solid} #{3:#ccc};
-snippet border-left-color
-	border-left-color:${1:#ccc};
-snippet border-left-style
-	border-left-style:${1:none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset};
-snippet border-left-width
-	border-left-width:${1:medium|thin|thick|length};
 # Generated Content
 snippet include-source
 	include-source:url(${1:});
 snippet quotes
 	quotes:${1:none|string};
-snippet content
-	content:${1:attr(alt)|counter(name)|counter(name,list-style-type)|counters(name,string)|counters(name,string,list-style-type)|no-close-quote|no-open-quote|close-quote|open-quote|string|url(url)};
 snippet counter-increment
 	counter-increment:${1:none|identifier number};
 snippet counter-reset
 	counter-reset:${1:none|identifier number};
 # Paddings
-snippet padding
-	padding:${1:0};
-snippet padding-top
-	padding-top:${1:0};
-snippet padding-right
-	padding-right:${1:0};
-snippet padding-bottom
-	padding-bottom:${1:0};
-snippet padding-left
-	padding-left:${1:0};
 # Lists
-snippet list-style
-	list-style:${1:none};
-snippet list-style2
-	list-style:${1:disc} ${2:outside} ${3:none};${4}
-snippet list-style-image
-	list-style-image:url(${1:});
-snippet list-style-position
-	list-style-position:${1:outside|inside};
-snippet list-style-type
-	list-style-type:${1:disc|circle|square|decimal|lower-roman|upper-roman|lower-alpha|upper-alpha|none|armenian|cjk-ideographic|georgian|lower-greek|hebrew|hiragana|hiragana-iroha|katakana|katakana-iroha|lower-latin|upper-latin};
 snippet marker-offset
 	marker-offset:${1:auto};
 # Table
